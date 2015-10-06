@@ -28,7 +28,8 @@
                 $message = 'Sorry Phone is Empty';
             } else if ( empty($phoneType) ) {
                 $message = 'Sorry Phone Type is Empty';
-            } else if ( addPhone($phone, $phoneType ) ) {
+            } else if ( addPhone($phone, $phoneType ) ) 
+                {
                 $message = 'Phone Added';
                 $phone = '';
                 $phoneType = '';
