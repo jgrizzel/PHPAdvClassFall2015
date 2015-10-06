@@ -19,9 +19,9 @@
         $city = filter_input(INPUT_POST, 'city');
         $state = filter_input(INPUT_POST, 'state');
         $zip = filter_input(INPUT_POST, 'zip');
-        $dob = filter_input(INPUT_POST, 'dob');
+        $birthday = filter_input(INPUT_POST, 'birthday');
         
-        
+        include './templates/messages.html.php';
         include './templates/add-address.html.php';
         
         ?>
