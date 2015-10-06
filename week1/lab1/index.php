@@ -10,5 +10,8 @@
     </head>
     <body>
         <a href="views/add-address.php">Add Address</a>
+        <br/>
+        <br/>        
+        <a href="views/view-address.php">View Address</a>
     </body>
 </html>
