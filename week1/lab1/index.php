@@ -11,6 +11,7 @@
     <body>
         <?php
         require_once './functions/dbconnect.php';
+        require_once './functions/dbfunctions.php';
         
         
         $fullname = filter_input(INPUT_POST, 'fullname');
