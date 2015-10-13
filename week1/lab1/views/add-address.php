@@ -22,18 +22,20 @@
         $zip = filter_input(INPUT_POST, 'zip');
         $birthday = filter_input(INPUT_POST, 'birthday');
 
-        $zipRegex = '^\d{5}(?:[-\s]\d{4})?$';
+        $nameRegex = '/^[A-Za-z0-9 ]{3,20}$/';
+        $zipRegex = '/^[0-9]{5}(?:-[0-9]{4})?$/';
+        $stateRegex = '/^[A-Za-z0-9 ]{2}$/';
 
         if (isPostRequest()) {
-            if (empty($fullname)) {
+            if (!preg_match($nameRegex, $fullname)) {
                 $message = 'Enter Name';
             } else if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
                 $message = 'Email NOT Valid';
-            } else if (empty($addressline1)) {
+            } else if (!preg_match($nameRegex, $addressline1)) {
                 $message = 'Enter Address';
-            } else if (empty($city)) {
+            } else if (!preg_match($nameRegex,$city)) {
                 $message = 'Enter city';
-            } else if (empty($state)) {
+            } else if (!preg_match($stateRegex, $state)) {
                 $message = 'Enter State';
             } else if (!preg_match($zipRegex, $zip)) {
                 $message = 'Zip Not Valid';

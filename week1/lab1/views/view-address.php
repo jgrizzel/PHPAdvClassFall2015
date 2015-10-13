@@ -10,38 +10,38 @@ $addresses = getAllAddress();
 if (count($addresses) > 0) :
     ?>
     <h1>Addresses</h1>
-    <ul>
-        
+    <ul>        
 
         <table  class="table table-bordered">
-                <tr>
-                    <th>
-                        Full Name
-                    </th>
-                    
-                    <th>
-                        Email
-                    </th>
-                    
-                    <th>
-                        Address
-                    </th>
-                    
-                    <th>
-                        City
-                    </th>
-                    <th>
-                        State
-                    </th>
-                    <th>
-                        Zip
-                    </th>
-                    <th>
-                        Birthday
-                    </th>
-                </tr>
-                <?php foreach ($addresses as $key => $values) : ?>
-                <tr>
+            <tr>
+                <th>
+                    Full Name
+                </th>
+
+                <th>
+                    Email
+                </th>
+
+                <th>
+                    Address
+                </th>
+
+                <th>
+                    City
+                </th>
+                <th>
+                    State
+                </th>
+                <th>
+                    Zip
+                </th>
+                <th>
+                    Birthday
+                </th>
+            </tr>
+       
+        <?php foreach ($addresses as $key => $values) : ?> 
+               <tr>
                     <td>
                         <?php echo $values['fullname']; ?>
                     </td>
@@ -63,7 +63,7 @@ if (count($addresses) > 0) :
                     <td>
                         <?php echo $values['birthday']; ?>
                     </td>
-                </tr>
+                </tr
             </table>
         <?php endforeach; ?>
     </ul>
