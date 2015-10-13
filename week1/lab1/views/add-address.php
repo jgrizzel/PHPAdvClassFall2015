@@ -25,6 +25,8 @@
         $nameRegex = '/^[A-Za-z0-9 ]{3,20}$/';
         $zipRegex = '/^[0-9]{5}(?:-[0-9]{4})?$/';
         $stateRegex = '/^[A-Za-z0-9 ]{2}$/';
+        
+        $message = "";
 
         if (isPostRequest()) {
             if (!preg_match($nameRegex, $fullname)) {
@@ -39,7 +41,7 @@
                 $message = 'Enter State';
             } else if (!preg_match($zipRegex, $zip)) {
                 $message = 'Zip Not Valid';
-            } elseif (addAddress($fullname, $email, $addressline1, $city, $state, $zip, $birthday)) {
+            } else if (addAddress($fullname, $email, $addressline1, $city, $state, $zip, $birthday)) {
                 $message = 'Address Added';
             }
         }
