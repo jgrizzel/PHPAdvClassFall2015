@@ -11,9 +11,36 @@ if (count($addresses) > 0) :
     ?>
     <h1>Addresses</h1>
     <ul>
-        <?php foreach ($addresses as $key => $values) : ?>
+        
 
-            <table border ="0" cellspacing="2" cellpadding="2">
+        <table  class="table table-bordered">
+                <tr>
+                    <th>
+                        Full Name
+                    </th>
+                    
+                    <th>
+                        Email
+                    </th>
+                    
+                    <th>
+                        Address
+                    </th>
+                    
+                    <th>
+                        City
+                    </th>
+                    <th>
+                        State
+                    </th>
+                    <th>
+                        Zip
+                    </th>
+                    <th>
+                        Birthday
+                    </th>
+                </tr>
+                <?php foreach ($addresses as $key => $values) : ?>
                 <tr>
                     <td>
                         <?php echo $values['fullname']; ?>
