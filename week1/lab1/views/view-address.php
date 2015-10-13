@@ -12,7 +12,32 @@ if (count($addresses) > 0) :
     <h1>Addresses</h1>
     <ul>
         <?php foreach ($addresses as $key => $values) : ?>
-            <li><?php echo $values['fullname']; ?> </li>
+
+            <table border ="0" cellspacing="2" cellpadding="2">
+                <tr>
+                    <td>
+                        <?php echo $values['fullname']; ?>
+                    </td>
+                    <td>
+                        <?php echo $values['email']; ?>
+                    </td>
+                    <td>
+                        <?php echo $values['addressline1']; ?>
+                    </td>
+                    <td>
+                        <?php echo $values['city']; ?>
+                    </td>
+                    <td>
+                        <?php echo $values['state']; ?>
+                    </td>
+                    <td>
+                        <?php echo $values['zip']; ?>
+                    </td>
+                    <td>
+                        <?php echo $values['birthday']; ?>
+                    </td>
+                </tr>
+            </table>
         <?php endforeach; ?>
     </ul>
 <?php endif; ?>
