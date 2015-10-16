@@ -26,25 +26,25 @@
         $zipRegex = '/^[0-9]{5}(?:-[0-9]{4})?$/';
         $stateRegex = '/^[A-Za-z0-9 ]{2}$/';
         
-        $message = "";
+        $message = array();
 
         if (isPostRequest()) {
             if (!preg_match($nameRegex, $fullname)) {
-                $message = 'Enter Name';
+                $message[] = 'Enter Name';
             }  if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
-                $message = 'Email NOT Valid';
+                $message[] = 'Email NOT Valid';
             }  if (!preg_match($nameRegex, $addressline1)) {
-                $message = 'Enter Address';
+                $message[] = 'Enter Address';
             }  if (!preg_match($nameRegex,$city)) {
-                $message = 'Enter city';
+                $message[] = 'Enter city';
             }  if (!preg_match($stateRegex, $state)) {
-                $message = 'Enter State';
+                $message[] = 'Enter State';
             }  if (!preg_match($zipRegex, $zip)) {
-                $message = 'Zip Not Valid';
+                $message[] = 'Zip Not Valid';
             }  
             
-            if (addAddress($fullname, $email, $addressline1, $city, $state, $zip, $birthday) && $message ="") {
-                $message = 'Address Added';
+            if (addAddress($fullname, $email, $addressline1, $city, $state, $zip, $birthday) && $message ===0){
+                $message[] = 'Address Added';
             }
         }
 

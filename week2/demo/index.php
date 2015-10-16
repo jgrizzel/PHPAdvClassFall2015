@@ -9,6 +9,9 @@
         require_once './autoload.php';
         
         $validtor = new Validator();
+        $util = new Util();
+        
+        $util->isPostRequest();
         
         $phone = '555-999-8888';
         
