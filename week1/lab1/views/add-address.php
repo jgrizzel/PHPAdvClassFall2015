@@ -43,7 +43,7 @@
                 $message[] = 'Zip Not Valid';
             }  
             
-            if (addAddress($fullname, $email, $addressline1, $city, $state, $zip, $birthday) && $message ===0){
+            if (addAddress($fullname, $email, $addressline1, $city, $state, $zip, $birthday) && count($message) ===0){
                 $message[] = 'Address Added';
             }
         }
