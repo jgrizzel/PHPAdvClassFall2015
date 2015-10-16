@@ -31,17 +31,19 @@
         if (isPostRequest()) {
             if (!preg_match($nameRegex, $fullname)) {
                 $message = 'Enter Name';
-            } else if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
+            }  if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
                 $message = 'Email NOT Valid';
-            } else if (!preg_match($nameRegex, $addressline1)) {
+            }  if (!preg_match($nameRegex, $addressline1)) {
                 $message = 'Enter Address';
-            } else if (!preg_match($nameRegex,$city)) {
+            }  if (!preg_match($nameRegex,$city)) {
                 $message = 'Enter city';
-            } else if (!preg_match($stateRegex, $state)) {
+            }  if (!preg_match($stateRegex, $state)) {
                 $message = 'Enter State';
-            } else if (!preg_match($zipRegex, $zip)) {
+            }  if (!preg_match($zipRegex, $zip)) {
                 $message = 'Zip Not Valid';
-            } else if (addAddress($fullname, $email, $addressline1, $city, $state, $zip, $birthday)) {
+            }  
+            
+            if (addAddress($fullname, $email, $addressline1, $city, $state, $zip, $birthday) && $message ="") {
                 $message = 'Address Added';
             }
         }
