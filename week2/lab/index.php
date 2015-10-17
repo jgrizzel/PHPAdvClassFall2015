@@ -9,7 +9,22 @@
         <?php
        
             $util = new Util();
-            $db = new DB($util->getDBConfig());
+            $dbc = new DB($util->getDBConfig());
+            $db = $dbc->getDB();
+            
+            /*
+            $stmt = $db->prepare("UPDATE test set dataone = :dataone, datatwo = :datatwo where id = :id");
+                
+            $binds = array(
+                ":id" => $id,
+                ":dataone" => $dataone,
+                ":datatwo" => $datatwo
+            );
+
+            if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+               $result = 'Record updated';
+            }*/
+            
             $login = new Login();
             
             $email= filter_input(INPUT_POST, 'email');

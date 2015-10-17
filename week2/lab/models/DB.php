@@ -42,6 +42,7 @@ class DB {
         try {
             $config = $this->getDbConfig();
             $this->db = new PDO($config['DB_DNS'], $config['DB_USER'], $config['DB_PASSWORD']);
+            $this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
         } catch (Exception $ex) {          
            $this->closeDB();
            throw new DBException($ex->getMessage());
