@@ -5,11 +5,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-interface IMessage {
 
-public function addMessage($key, $msg);
-        
-public function removeMessage($key);
-
-public function getAllMessages();
+/**
+ * Description of SuccessMessage
+ *
+ * @author Joshua
+ */
+class SuccessMessage extends Message{
+    
 }
