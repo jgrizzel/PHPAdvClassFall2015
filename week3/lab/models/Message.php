@@ -13,11 +13,10 @@
  */
 class Message implements IMessage {
 
-    private $messages = array();
+    protected $messages = array();
 
     public function addMessage($key, $msg) {
         $this->messages[$key] = $msg;
-        
     }
 
     public function removeMessage($key) {
@@ -26,6 +25,10 @@ class Message implements IMessage {
 
     public function getAllMessages() {
         return $this->messages;
+    }
+
+    public function removeAllMessages() {
+        $this->messages = array();
     }
 
 }
