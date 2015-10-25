@@ -17,14 +17,6 @@ class Validator {
         return ( is_string($email) && !empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL) !== false );
     }
     
-    public function passwordIsValid($password) {
-        return ( is_string($password) && !empty($password) !== false );
-    }
-    
-            
-    
-    
-    
     /**
      * A method to check if a phone number is valid.
      *

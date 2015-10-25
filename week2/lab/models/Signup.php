@@ -28,7 +28,7 @@ class Signup {
 
         $stmt = $this->getDb()->prepare("INSERT INTO users set email = :email, password = :password, created = now()");
 
-        $password = sha1($password);
+        $password = password_hash($password, PASSWORD_DEFAULT);
 
         $binds = array(
             ":email" => $email,
