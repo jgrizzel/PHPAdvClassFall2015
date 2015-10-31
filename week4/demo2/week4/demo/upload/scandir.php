@@ -12,7 +12,7 @@
         $folder = './uploads';
         $directory = scandir('./uploads');
 
-        //var_dump($directory);
+        var_dump($directory);
         ?>
 
 
