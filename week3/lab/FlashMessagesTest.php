@@ -18,6 +18,10 @@ and open the template in the editor.
         <div class="bg-info">
             <?php
             session_start();
+            
+            $_SESSION['flashmessages'] = array(
+                'testing' => 'FlashMessage Test'
+            );
 
             include './models/IMessage.php';
             include './models/Message.php';
@@ -29,13 +33,13 @@ and open the template in the editor.
             $flashMessage->addMessage('test2', 'this is my test msg2!');
             $flashMessage->addMessage('test3', 'this is my test msg3!');
 
-            var_dump($flashMessage->getAllMessages());
+            //var_dump($flashMessage->getAllMessages());
             echo '<br/>';
             var_dump($flashMessage instanceof Imessage);
             echo '<br/>';
-            var_dump($flashMessage->removeMessage('test'));
+            //var_dump($flashMessage->removeMessage('test'));
             echo'<br/>';
-            var_dump($flashMessage->getAllMessages());
+            //var_dump($flashMessage->getAllMessages());
             echo'<br/>';
 
             var_dump($_SESSION);
