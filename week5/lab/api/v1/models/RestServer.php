@@ -36,11 +36,8 @@ class RestServer {
     }
 
     function setserverData() {
-        /*
-         * set 'always_populate_raw_post_data = -1' so you can pass json
-         * to your rest server instead of post data  
-         *
-         */
+        /* set 'always_populate_raw_post_data = -1' so you can pass json
+          to your rest server instead of post data */
         if (strpos(filter_input(INPUT_SERVER, 'CONTENT_TYPE'), "application/json") !== false) {
             $this->serverData = json_decode(trim(file_get_contents('php://input')), true);
 
