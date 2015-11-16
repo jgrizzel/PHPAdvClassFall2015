@@ -5,10 +5,10 @@ var myApp = angular.module('myApp', [
   'appControllers',
   'appServices'
 ]);
-
+//should have called it viewModels. 
 myApp.constant('config', {
     "endpoints": {
-       "address" : 'http://localhost:81/PHPAdvClassFall2015/week5/demo/api/v1/address',
+       "address" : 'http://localhost/PHPAdvFallClass2015/week5/demoUpdate/demo/api/v1/address',
     },
     "models" : {
         "address" : {

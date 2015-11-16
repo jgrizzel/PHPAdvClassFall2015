@@ -5,8 +5,9 @@ var appControllers = angular.module('appControllers', []);
 appControllers.controller('AddressCtrl', ['$scope', '$log', 'addressProvider', 
     function($scope, $log, addressProvider) {
     
-        $scope.addresses = [];
+        $scope.addresses = []; // create variable to hold data
 
+        // gets data to put in variable
         function getAddresses() {    
             addressProvider.getAllAddresses().success(function(response) {
                 $scope.addresses = response.data;
@@ -15,12 +16,13 @@ appControllers.controller('AddressCtrl', ['$scope', '$log', 'addressProvider',
             });
         };
 
+        //calls function
         getAddresses();
     
     
-}])
+}]);
 
-.controller('AddressDetailCtrl', ['$scope', '$log', '$routeParams', 'addressProvider',
+appControllers.controller('AddressDetailCtrl', ['$scope', '$log', '$routeParams', 'addressProvider',
     function($scope, $log, $routeParams, addressProvider) {
     
        var addressID = $routeParams.addressId;
