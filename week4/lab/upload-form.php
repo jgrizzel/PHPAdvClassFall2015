@@ -1,3 +1,4 @@
+<?php require_once './autoload.php'; ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,6 +11,7 @@
             Send this file: <input name="upfile2" type="file" />
             <input type="submit" value="Send File" />
         </form>
+        <div><a href="./view-files.php">View Files</a></div>
 
         <!-- display imaged
         <img src="uploads/30420d1a9afb2bcb60335812569af4435a59ce17.jpg" /> -->
