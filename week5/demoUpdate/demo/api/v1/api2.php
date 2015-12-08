@@ -73,7 +73,7 @@ try {
    
     
     
-} catch (InvalidArgumentException $e) {
+} catch (InvalidArgumentException $ex) {
     $restServer->setStatus(400);
     $restServer->setErrors($ex->getMessage());
 } catch (Exception $ex) {    
