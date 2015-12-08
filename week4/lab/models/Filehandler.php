@@ -2,6 +2,10 @@
 
 class Filehandler {
 
+    function isPost() {
+        return ( filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST' );
+    }
+
     function isValidParameters($keyName) {
         // Undefined | Multiple Files | $_FILES Corruption Attack
         // If this request falls under any of them, treat it invalid.
@@ -47,10 +51,10 @@ class Filehandler {
             'gif' => 'image/gif'
         );
         $ext = array_search($finfo->file($_FILES[$keyName]['tmp_name']), $validExts, true);
-if (false === $ext) {
+        if (false === $ext) {
             throw new RuntimeException('Invalid file format.');
         }
-        
+
         return $ext;
     }
 
@@ -69,6 +73,10 @@ if (false === $ext) {
         if (!move_uploaded_file($_FILES[$keyName]['tmp_name'], $location)) {
             throw new RuntimeException('Failed to move uploaded file.');
         }
+    }
+
+    function deleteFiles($file) {
+        unlink('./uploads/' . $file);
     }
 
 }
