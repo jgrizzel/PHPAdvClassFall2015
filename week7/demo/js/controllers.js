@@ -5,9 +5,8 @@ var appControllers = angular.module('appControllers', []);
 appControllers.controller('AddressCtrl', ['$scope', '$log', 'addressProvider', 
     function($scope, $log, addressProvider) {
     
-        $scope.addresses = []; // create variable to hold data
+        $scope.addresses = [];
 
-        // gets data to put in variable
         function getAddresses() {    
             addressProvider.getAllAddresses().success(function(response) {
                 $scope.addresses = response.data;
@@ -16,13 +15,12 @@ appControllers.controller('AddressCtrl', ['$scope', '$log', 'addressProvider',
             });
         };
 
-        //calls function
         getAddresses();
     
     
-}]);
+}])
 
-appControllers.controller('AddressDetailCtrl', ['$scope', '$log', '$routeParams', 'addressProvider',
+.controller('AddressDetailCtrl', ['$scope', '$log', '$routeParams', 'addressProvider',
     function($scope, $log, $routeParams, addressProvider) {
     
        var addressID = $routeParams.addressId;
@@ -32,6 +30,7 @@ appControllers.controller('AddressDetailCtrl', ['$scope', '$log', '$routeParams'
                 $scope.address = response.data;
                 $scope.address.birthday = new Date($scope.address.birthday);                
                 console.log($scope.address);
+                loadMap('41.8239890,-71.4128340');
             }).error(function (response, status) {
                $log.log(response);
             });
@@ -39,6 +38,26 @@ appControllers.controller('AddressDetailCtrl', ['$scope', '$log', '$routeParams'
 
         getAddress();
         
+        
+        function loadMap(location) {
+
+        var lat = location.split(',')[0];
+        var long = location.split(',')[1];
+
+            var myCenter = new google.maps.LatLng(lat, long);
+
+                var mapProp = {
+                    center: myCenter,
+                    zoom: 10,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(document.querySelector('.googleMap'), mapProp);
+                var marker = new google.maps.Marker({
+                    position: myCenter
+                });
+                marker.setMap(map);
+
+        }
         
     
 }]);
