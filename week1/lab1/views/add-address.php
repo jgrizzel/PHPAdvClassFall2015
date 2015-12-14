@@ -25,25 +25,26 @@
         $nameRegex = '/^[A-Za-z0-9 ]{3,20}$/';
         $zipRegex = '/^[0-9]{5}(?:-[0-9]{4})?$/';
         $stateRegex = '/^[A-Za-z0-9 ]{2}$/';
-        
+
         $message = array();
 
         if (isPostRequest()) {
             if (!preg_match($nameRegex, $fullname)) {
                 $message[] = 'Enter Name';
-            }  if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
+            } if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
                 $message[] = 'Email NOT Valid';
-            }  if (!preg_match($nameRegex, $addressline1)) {
+            } if (!preg_match($nameRegex, $addressline1)) {
                 $message[] = 'Enter Address';
-            }  if (!preg_match($nameRegex,$city)) {
+            } if (!preg_match($nameRegex, $city)) {
                 $message[] = 'Enter city';
-            }  if (!preg_match($stateRegex, $state)) {
+            } if (!preg_match($stateRegex, $state)) {
                 $message[] = 'Enter State';
-            }  if (!preg_match($zipRegex, $zip)) {
+            } if (!preg_match($zipRegex, $zip)) {
                 $message[] = 'Zip Not Valid';
-            }  
-            
-            if (addAddress($fullname, $email, $addressline1, $city, $state, $zip, $birthday) && count($message) ===0){
+            }
+
+            if (count($message) === 0) {
+                addAddress($fullname, $email, $addressline1, $city, $state, $zip, $birthday);
                 $message[] = 'Address Added';
             }
         }
