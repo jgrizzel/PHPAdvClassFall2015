@@ -35,7 +35,7 @@
                     ?>
                     <tr>
                         <?php $type = $finfo->file($folder . DIRECTORY_SEPARATOR . $file); ?>
-                        <td><?php echo $file; ?></td>
+                        <td><a href="<?php echo $folder . DIRECTORY_SEPARATOR . $file; ?>"><?php echo $file; ?></a></td>
                         <td><?php echo $type; ?></td>
                         <td><?php echo filesize($folder . DIRECTORY_SEPARATOR . $file); ?></td>
                         <td><form action="#" method="POST">
