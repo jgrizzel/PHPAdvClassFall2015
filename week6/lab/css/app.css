@@ -1,0 +1,14 @@
+/* app css stylesheet */
+
+
+h1 {
+    background-color: #EEE;
+    border: 1px solid black;
+    padding: 0.1em;
+    text-align: center;
+    
+}
+
+.corpInfo {
+    text-align: center;
+}

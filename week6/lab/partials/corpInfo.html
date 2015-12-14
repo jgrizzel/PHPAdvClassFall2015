@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<h1>Corporation Info</h1>
+
+<div class="corpInfo">
+
+    <h2>{{corporation.corp}}</h2>
+
+
+    <p><strong>{{corporation.owner}}</strong></p>
+
+    <p><strong>Email: </strong>
+        <a href="mailto:{{corporation.email}}">{{corporation.email}}</a>
+    </p>
+
+
+    <a href="tel:{{corporation.phone}}">{{corporation.phone}}</a> <br />
+
+
+
+    <div id="googleMap" style="width:400px;height:400px;margin:auto;"></div>
+
+    <p><a href="#/">Back</a></p>
+</div>

@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<h1>Corporations</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Corporation</th>
+            <th>Owner</th>                
+            <th></th>
+        </tr>
+    </thead>
+    <tr ng-repeat="corporation in corporations">
+        <td>{{corporation.corp}}</td>                  
+        <td>{{corporation.owner}}</td>
+        <td><a ng-href="#/corporation/{{corporation.id}}">View</a></td>
+    </tr>
+</table>
+
+
