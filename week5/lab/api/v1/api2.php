@@ -35,7 +35,7 @@ try {
         if ($verb === 'POST') {
 
 
-            if ($corps->post($serverData)) {
+            if ($corps->post($data)) {
                 $RestServer->setMessage('Corporation  Added');
                 $RestServer->setStatus(201);
             } else {
