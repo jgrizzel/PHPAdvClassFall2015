@@ -16,10 +16,10 @@ appControllers.controller('CorporationCtrl', ['$scope', '$log', 'corporationProv
         .controller('CorporationDetailCtrl', ['$scope', '$log', '$routeParams', 'corporationProvider',
             function ($scope, $log, $routeParams, corporationProvider) {
 
-                var corpID = $routeParams.corpID;
+                var corpID = $routeParams.ID;
                 function getCorporation() {
                     corporationProvider.getCorporations(corpID).success(function (response) {
-                        $scope.corporation = response.data[0];
+                        $scope.corporation = response.data;
                         loadMap($scope.corporation.location);
                         console.log(corpID);
                         console.log($scope.corporation);
