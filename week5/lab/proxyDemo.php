@@ -62,6 +62,7 @@
                 var resource = document.querySelector('input[name="resource"]').value;
                 var data = {
                     'corp': document.querySelector('input[name="corp"]').value,
+                    'incorp_dt': document.querySelector('input[name="incorp_dt"]').value,                    
                     'email': document.querySelector('input[name="email"]').value,
                     'owner': document.querySelector('input[name="owner"]').value,
                     'phone': document.querySelector('input[name="phone"]').value,

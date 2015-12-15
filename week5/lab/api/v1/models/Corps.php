@@ -74,7 +74,7 @@ class Corps implements iRestModel {
         $binds = array(
             ":id" => $id,
             ":corp" => $data['corp'],
-            ":incorp_dt" => $getData ['incorp_dt'],
+            ":incorp_dt" => $data ['incorp_dt'],
             ":email" => $data['email'],
             ":owner" => $data['owner'],
             ":phone" => $data['phone'],
