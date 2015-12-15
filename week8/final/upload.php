@@ -1,4 +1,5 @@
 <?php
+
 header("Access-Control-Allow-Orgin: *");
 header("Content-Type: application/json; charset=utf8");
 
@@ -215,4 +216,4 @@ $response = array(
 echo json_encode($response);
 die();
 
-    
+
