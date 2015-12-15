@@ -2,8 +2,8 @@
 
 include_once './autoload.php';
 
-$RestServer = new RestServer();
 try {
+    $RestServer = new RestServer();
     $RestServer->setStatus(200);
     $id = $RestServer->getId();
     $resource = $RestServer->getResource();
@@ -29,6 +29,7 @@ try {
                 throw new InvalidArgumentException('Corporation ID ' . $id . ' was not found');
             } else {
                 $results = $corps->put($data, $id);
+                $RestServer->setMessage($id . ' updated');
             }
         }
 
@@ -48,7 +49,7 @@ try {
             if ($id === NULL) {
                 throw new InvalidArgumentException('No ID');
             } else {
-                if ($resourceCorps->delete($id)) {
+                if ($corps->delete($id)) {
                     $RestServer->setMessage($id . ' deleted');
                 } else {
                     throw new InvalidArgumentException($id . ' not deleted');

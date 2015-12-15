@@ -70,10 +70,11 @@ class Corps implements iRestModel {
 
     public function put($data, $id) {
         $dataResults = array();
-        $stmt = $this->getDb()->prepare("UPDATE corps SET corp = :corp, email = :email, owner = :owner, phone = :phone, location = :location WHERE id= :id  ");
+        $stmt = $this->getDb()->prepare("UPDATE corps SET corp = :corp, incorp_dt = :incorp_dt, email = :email, owner = :owner, phone = :phone, location = :location WHERE id= :id  ");
         $binds = array(
             ":id" => $id,
             ":corp" => $data['corp'],
+            ":incorp_dt" => $getData ['incorp_dt'],
             ":email" => $data['email'],
             ":owner" => $data['owner'],
             ":phone" => $data['phone'],
@@ -81,7 +82,6 @@ class Corps implements iRestModel {
         );
         if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
             $dataResults = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            echo "Record updated sucessfully" . $id;
         }
         return $dataResults;
     }

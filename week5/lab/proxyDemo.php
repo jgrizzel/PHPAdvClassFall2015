@@ -34,6 +34,8 @@
         Data(optional):<br />   
         Corporation <input type="text" name="corp" value="" />
         <br />
+         Date Established <input type="date" name="incorp_dt"  />
+        <br />
         Email <input type="email" name="email" value="" />
         <br />
         Owner <input type="text" name="owner" value="" />

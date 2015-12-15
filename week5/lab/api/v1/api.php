@@ -31,10 +31,6 @@ try {
                 break;
         }
     }
-
-
-
-
     $config = array(
         'DB_DNS' => 'mysql:host=localhost;port=3306;dbname=PHPAdvClassFall2015',
         'DB_USER' => 'root',
@@ -95,8 +91,7 @@ try {
         }
     } else {
         throw new InvalidArgumentException($resource . ' Resource Not Found');
-        //$response['errors'] = 'Resource Not Found';
-        //$status = 404;
+        
     }
 } catch (InvalidArgumentException $e) {
     $response['errors'] = $e->getMessage();
